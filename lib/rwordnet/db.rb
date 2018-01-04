@@ -2,7 +2,7 @@ module WordNet
   # Represents the WordNet database, and provides some basic interaction.
   class DB
     # By default, use the bundled WordNet
-    @path = File.expand_path("../../../WordNet-3.0/", __FILE__)
+    @path = File.expand_path("../../../WordNet-3.1/", __FILE__)
 
     class << self; attr_accessor :cached end
     @raw_wordnet = {}

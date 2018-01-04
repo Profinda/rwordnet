@@ -71,6 +71,6 @@ No problem:
 ```Ruby
 require 'rwordnet'
 
-WordNet::DB.path = "/path/to/WordNet-3.0"
+WordNet::DB.path = "/path/to/WordNet-3.1"
 lemmas = WordNet::Lemma.find_all("fruit")
 ```
