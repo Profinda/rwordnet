@@ -185,9 +185,14 @@ module WordNet
     #     WordNet::Lemma.find("fall", :verb).synsets[1].relation("!")[0].gloss
     def relation(pointer_symbol)
       @pointers.select { |pointer| pointer.symbol == pointer_symbol }.
-        map! { |pointer| Synset.new(@synset_type, pointer.offset) }
+        map! { |pointer| Synset.new(pointer.pos, pointer.offset) }
     end
-
+  
+    # Get the derivationally related Synsets
+    def derivations
+      relation(DERIVATIONALLY_RELATED_FORM)
+    end  
+      
     # Get the Synsets of this sense's antonym
     def antonyms
       relation(ANTONYM)
